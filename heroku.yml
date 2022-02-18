@@ -1,0 +1,10 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: DATABASE
+  config:
+build:
+  docker:
+    web: Dockerfile
+run:
+  web: node dist/src/index.js
