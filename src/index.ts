@@ -7,7 +7,6 @@ import { router as postRoutes } from './routes/post';
 import { router as folderRoutes } from './routes/folder';
 
 dotenv.config();
-const port = process.env.PORT;
 
 const app = express();
 
@@ -35,6 +34,4 @@ app.use((error: any, req: express.Request, res: express.Response, next: express.
     return res.status(500).json({ error });
 });
 
-app.listen(port, () => {
-    console.log(`REST API server ready at: http://localhost:${port}`);
-});
+export default app;

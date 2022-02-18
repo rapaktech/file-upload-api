@@ -49,7 +49,7 @@ export const loginUser = async (req: express.Request, res: express.Response, nex
 
     if (isValidPassword) {
         const token = signToken({ id: foundUser.id, email: foundUser.email });
-        return res.status(200).json({ message: `User Logged In Successfully! Here's Your Token:`, token });
+        return res.status(200).json({ message: `User Logged In Successfully!`, token });
     }
     else return res.status(400).json({ message: 'Invalid Email Address Or Password' });
 }
