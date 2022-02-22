@@ -3,6 +3,7 @@ setup:
     - plan: heroku-postgresql
       as: DATABASE
   config:
+    DATABASE_URL: 'postgres://ojcdfvyjheslmj:33a6afe9a6915bee03065407d99722d3d418ee9d44efe8d1a6d54d384d08d61f@ec2-54-157-160-218.compute-1.amazonaws.com:5432/ddts4a2q5v6bot'
     PORT: 3000
     SALT_ROUNDS: 10
     JWT_SECRET_KEY: 'AKIAUR55RXB5J33A7676'
