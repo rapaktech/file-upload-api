@@ -9,6 +9,8 @@ WORKDIR /app
 COPY ["package.json", "package-lock.json*", "prisma/", "./"]
 
 RUN npm install
+RUN prisma migrate dev --name "init" --preview-feature
+
 # If you are building your code for production
 # RUN npm ci --only=production
 
