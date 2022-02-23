@@ -16,7 +16,7 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-RUN npx tsc --watch
+RUN npx tsc
 
 EXPOSE 3000
 CMD [ "node", "dist/index.js" ]
