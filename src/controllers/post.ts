@@ -8,11 +8,6 @@ export const upload = uploadFile.single('file');
 
 export const createPost = async (req: any, res: express.Response, next: express.NextFunction) => {
     try {
-        const errors = validationResult(req);
-        if (errors.isEmpty() === false) {
-            next(errors);
-        }
-
         const newPost = await prisma.post.create({
             data: {
                 title: req.body.title,
