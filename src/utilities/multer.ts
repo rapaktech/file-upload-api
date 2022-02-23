@@ -1,4 +1,3 @@
-import { randomUUID } from 'crypto';
 import multer from 'multer';
 import multerS3 from 'multer-s3';
 import { s3Instance, bucket } from './s3';

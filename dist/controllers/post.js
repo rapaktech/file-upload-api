@@ -49,7 +49,7 @@ var createPost = function (req, res, next) { return __awaiter(void 0, void 0, vo
             case 0:
                 _a.trys.push([0, 2, , 3]);
                 errors = (0, express_validator_1.validationResult)(req);
-                if (!errors.isEmpty()) {
+                if (errors.isEmpty() === false) {
                     next(errors);
                 }
                 return [4 /*yield*/, prisma.post.create({
