@@ -6,7 +6,7 @@ import { uploadFile } from './../utilities/multer';
 
 export const upload = uploadFile.single('file');
 
-export const createPost = async (req: express.Request, res: express.Response, next: express.NextFunction) => {
+export const createPost = async (req: any, res: express.Response, next: express.NextFunction) => {
     try {
         const newPost = await prisma.post.create({
             data: {
