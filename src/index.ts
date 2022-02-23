@@ -30,7 +30,7 @@ app.use('**', (req, res) => {
 });
 
 // handle terminal errors
-app.use((error: any, req: express.Request, res: express.Response, next: express.NextFunction)=> {
+app.use((error: express.ErrorRequestHandler, req: express.Request, res: express.Response, next: express.NextFunction)=> {
     console.log(error);
     return res.status(500).json({ error });
 });
