@@ -2,9 +2,6 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 import { validationResult } from 'express-validator';
 import express from 'express';
-import { uploadFile } from './../utilities/multer';
-
-export const upload = uploadFile.single('file');
 
 export const createPost = async (req: any, res: express.Response, next: express.NextFunction) => {
     try {

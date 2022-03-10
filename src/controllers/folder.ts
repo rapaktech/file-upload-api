@@ -12,7 +12,7 @@ export const createFolder = async (req: any, res: express.Response, next: expres
     const newFolder = await prisma.folder.create({
         data: {
           name: req.body.name,
-          user: { connect: { email: req.user.email } },
+          user: { connect: { email: req.body.user.email } },
         },
     });
 

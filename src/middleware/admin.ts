@@ -8,7 +8,7 @@ export const checkIfUser = async (req: any, res: any, next: any) => {
         const decodedToken = decodeToken(token);
         if (!decodedToken) return res.status(400).json({ message: "Session Expired. Please Sign In Again To Access This Page." });
 
-        req.admin = decodedToken;
+        req.body.admin = decodedToken;
         next();
     } catch (error) {
         next(error);
