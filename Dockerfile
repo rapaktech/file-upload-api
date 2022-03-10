@@ -16,9 +16,9 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-RUN npx tsc
+RUN npx prisma generate
 
-RUN npx prisma migrate dev --name "init" --preview-feature
+RUN npx tsc
 
 ARG SALT_ROUNDS
 ARG JWT_SECRET_KEY
