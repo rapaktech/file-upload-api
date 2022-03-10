@@ -16,8 +16,6 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-RUN npx prisma generate
-
 RUN npx tsc
 
 ARG SALT_ROUNDS
