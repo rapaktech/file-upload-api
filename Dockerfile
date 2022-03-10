@@ -18,5 +18,14 @@ COPY . .
 
 RUN npx tsc
 
+RUN npx prisma migrate dev --name "init" --preview-feature
+
+ARG SALT_ROUNDS
+ARG JWT_SECRET_KEY
+ARG S3_ACCESS_KEY_ID
+ARG S3_SECRET_ACCESS_KEY
+ARG S3_REGION
+ARG S3_BUCKET
+
 EXPOSE 3000
 CMD [ "node", "dist/index.js" ]
