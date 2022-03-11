@@ -8,7 +8,7 @@ export const createAdmin = async () => {
             where: { email: process.env.ADMIN_EMAIL },
         });
     
-        if (foundAdmin) return console.log({ message: 'Email Has Been Used Before!' });
+        if (foundAdmin) return console.log('Admin Already Exists!');
     
         const hash = await hashPassword(String(process.env.ADMIN_PASSWORD));
     
