@@ -8,6 +8,7 @@
     "test": "jest src",
     "dev": "nodemon dist/index.js",
     "ts-node": "ts-node src/index.ts",
+    "tsc": "tsc",
     "deploy": "git add . && git commit -m Heroku && git push heroku main"
   },
   "jest": {
