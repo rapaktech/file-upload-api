@@ -26,4 +26,4 @@ ARG S3_REGION
 ARG S3_BUCKET
 
 EXPOSE 3000
-CMD [ "node", "dist/index.js" ]
+CMD [ "npx", "ts-node" "src/index.ts"]
