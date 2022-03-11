@@ -1,6 +1,6 @@
 import { decodeToken } from './../services/jwt';
 
-export const checkIfUser = async (req: any, res: any, next: any) => {
+export const checkIfAdmin = async (req: any, res: any, next: any) => {
     try {
         const token = req.headers.authorization;
         if (!token) return res.status(400).json({ message: "Token Missing. Please Sign In Again To Access This Page." });

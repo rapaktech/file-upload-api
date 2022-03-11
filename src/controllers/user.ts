@@ -16,7 +16,7 @@ export const createUser = async (req: express.Request, res: express.Response, ne
         where: { email: req.body.email },
     });
 
-    if (foundUser) return res.status(400).json({ message: 'Email Has Been Used Before!'});
+    if (foundUser) return res.status(400).json({ message: 'Email Has Been Used Before!' });
 
     const hash = await hashPassword(req.body.password);
 
@@ -28,7 +28,7 @@ export const createUser = async (req: express.Request, res: express.Response, ne
         },
     });
 
-    if (newUser) return res.status(200).json({ message: 'User Created Successfully!'});
+    if (newUser) return res.status(200).json({ message: 'User Created Successfully!' });
     else next();
 }
 

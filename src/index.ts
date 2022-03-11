@@ -5,6 +5,8 @@ import helmet from 'helmet';
 import { router as userRoutes } from './routes/user';
 import { router as postRoutes } from './routes/post';
 import { router as folderRoutes } from './routes/folder';
+import { router as adminRoutes } from './routes/admin';
+import { createAdmin as seedAdmin } from './seeders/admin';
 
 dotenv.config();
 const port = process.env.PORT;
@@ -23,6 +25,7 @@ app.get('/', (req, res) => {
 app.use(userRoutes);
 app.use(postRoutes);
 app.use(folderRoutes);
+app.use(adminRoutes);
 
 // handle invalid or dead links
 app.use('**', (req, res) => {
@@ -37,4 +40,5 @@ app.use((error: any, req: express.Request, res: express.Response, next: express.
 
 app.listen(port, () => {
     console.log(`REST API server ready at: http://localhost:${port}`);
+    seedAdmin();
 });
