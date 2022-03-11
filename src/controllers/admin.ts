@@ -34,7 +34,7 @@ export const markUnsafe = async (req: any, res: express.Response, next: express.
         }
         const post = await prisma.post.delete({
             where: {
-                id: req.body.fileId,
+                id: Number(req.body.fileId),
             }
         });
         return res.status(200).json({ message: 'Post Deleted Successfully!', post });
